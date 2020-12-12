@@ -6,7 +6,8 @@
 <br/>
 <a [href]="url">DNC</a>
 <br/>
-<input type="button" value="Click Me" (click)="display()"/>
+<!--$event will be used to pass element's information-->
+<input type="button" value="Click Me" (click)="display($event)"/>
 <br/>
 <input type="text" [(ngModel)]="name"/>
 <br/>
