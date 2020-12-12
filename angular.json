@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "my-ng-app"
+  "defaultProject": "my-ng-app",
+  "cli": {
+    "analytics": false
+  }
 }
