@@ -1,0 +1,80 @@
+<div class="container">
+  <h4>The *ngFor Structural directive </h4>
+  <strong>List of Names</strong>
+  <select class="form-control">
+    <option *ngFor="let name of names" value="{{name}}">{{name}}</option>
+  </select>
+</div>
+<div class="container">
+  <h4>Dynamically Generated HTML table with Dynamic Rows using *ngFor</h4>
+  <table class="table table-bordered table-striped table-dark">
+    <thead>
+       <tr>
+         <th>Student Id</th>
+         <th>Student Name</th>
+         <th>Course Name</th>
+       </tr>
+    </thead>
+    <tbody>
+      <!--(click) event binding for the row of the table
+        this will be executed when any row from this table is clicked-->
+        <tr *ngFor="let std of students" (click)="getSelectedRecord(std)">
+          <td>{{std.StudentId}}</td>
+          <td>{{std.StudentName}}</td>
+          <td>{{std.CourseName}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <div>
+    <strong>The Selected Record on Row Click = {{selectedRecord}}</strong>
+  </div>
+</div>
+<div class="container">
+  <h4>Dynamically Generate Table using *ngFor without hard-coding</h4>
+  <table class="table table-bordered table-striped table-danger">
+    <thead>
+       <tr>
+         <!--Generate table headers dynamically-->
+         <th *ngFor="let header of tableColumnHeaders" >
+           {{header}}
+         </th>
+       </tr>
+    </thead>
+    <tbody>
+      <!--Generate Rows Dynamically-->
+        <tr *ngFor="let std of students" (click)="getSelectedRecord(std)">
+          <!--Generate value of each property of row
+            based on each property name of tableColumnHeaders array-->
+            <td *ngFor="let header of tableColumnHeaders">
+              <!--Read property of each student record and generate td-->
+               {{std[header]}}
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  <div>
+    <strong>The Selected Record on Row Click = {{selectedRecord}}</strong>
+  </div>
+</div>
+<div class="container">
+  <!---Using *ngIf If the Toggle is true the message will be added in DOM
+      else will be removed from DOM-->
+  <input type="button" value="Show/Hide Message using *ngIf"
+   (click)="showhide()" class="btn btn-warning">
+  <p>{{toggle}}</p>
+  <p *ngIf="toggle">
+    <strong>{{message}}</strong>
+  </p>
+</div>
+
+<div class="container">
+  <!---Using ng-show If the Toggle is true the message will be hidden in DOM
+      else will be visibke from DOM-->
+  <input type="button" value="Show/Hide Message using ng-show"
+   (click)="showhide()" class="btn btn-warning">
+  <p>{{toggle}}</p>
+  <p [hidden]="!toggle">
+    <strong>{{message}}</strong>
+  </p>
+</div>
+
