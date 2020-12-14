@@ -15,3 +15,7 @@ export const Students =[
   //   StudentId:105, StudentName: 'Makramd', CourseName:'R', Fees:13000
   // }
 ];
+
+export const Categories =["ECT", "ECL", "FOD", "HOM"];
+
+export const Manufacturers =["HP", "TATA", "IBM", "RIL"];

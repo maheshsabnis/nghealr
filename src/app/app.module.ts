@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import {DemoComponent} from './components/democomponent/app.demo.component';
-
+import {ProductFormComponent} from './components/productformcomponent/app.productform.component';
 // dependencies of NgModule with its properties
 
 // 1. imports: of the type array, that defines the list of Standard Angular moduels
@@ -27,13 +27,13 @@ import {DemoComponent} from './components/democomponent/app.demo.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DemoComponent
+    AppComponent, DemoComponent, ProductFormComponent
   ],
   imports: [
     BrowserModule, FormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [DemoComponent]
+  bootstrap: [ProductFormComponent]
 })
 export class AppModule { }
