@@ -1,12 +1,13 @@
 // BrowserModule: Loads the Module and its dependencies(?) in browser for exceution
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import {DemoComponent} from './components/democomponent/app.demo.component';
 import {ProductFormComponent} from './components/productformcomponent/app.productform.component';
+import {ProductReactiveFormComponent} from './components/productreactiveformcomponent/app.productreactiveform.component';
 // dependencies of NgModule with its properties
 
 // 1. imports: of the type array, that defines the list of Standard Angular moduels
@@ -27,13 +28,14 @@ import {ProductFormComponent} from './components/productformcomponent/app.produc
 
 @NgModule({
   declarations: [
-    AppComponent, DemoComponent, ProductFormComponent
+    AppComponent, DemoComponent, ProductFormComponent,
+    ProductReactiveFormComponent
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ProductFormComponent]
+  bootstrap: [ProductReactiveFormComponent]
 })
 export class AppModule { }

@@ -1,0 +1,97 @@
+<div>
+  <h2>The Reactive Form Component</h2>
+    <table class="table table-bordered table-striped">
+        <tr>
+          <td>
+            <!--ngSubmit is used to submit the form in Angular-->
+            <!---Bind the FormGroup from component to [formGroup] attribute Directive of <form></form>-->
+            <form name="frmProduct" [formGroup]="frmProduct" (ngSubmit)="save()">
+              <div class="form-group">
+                    <label for="ProductId">Product Id</label>
+                    <!--Bind each key of frmProduct with editable element using formControlName-->
+                    <input type="text" class="form-control" name="ProductId"
+                     formControlName="ProductId"
+                   >
+                   <!--Evaluate validation conditions-->
+                   <div class="alert alert-danger"
+                     *ngIf="frmProduct.controls.ProductId.dirty && !frmProduct.controls.ProductId.valid"
+                   >
+                      <p *ngIf="frmProduct.controls.ProductId.errors.required">Product Id is Must</p>
+                      <p *ngIf="frmProduct.controls.ProductId.errors.minlength">Product Id must be min 2 characters</p>
+                      <p *ngIf="frmProduct.controls.ProductId.errors.maxlength">Product Id must be max 5 characters</p>
+                      <p *ngIf="frmProduct.controls.ProductId.errors.pattern">Product Id must be alphanumeric</p>
+                   </div>
+              </div>
+              <div class="form-group">
+                    <label for="ProductName">Product Name</label>
+                    <input type="text" class="form-control"
+                    formControlName="ProductName"
+                    name="ProductName" >
+              </div>
+                <div class="form-group">
+                    <label for="CategoryName">Category Name</label>
+                    <select class="form-control" name="CategoryName"
+                    formControlName="CategoryName"
+                    >
+                        <option *ngFor="let cat of categories" value="{{cat}}">{{cat}}</option>
+                    </select>
+              </div>
+                <div class="form-group">
+                    <label for="Manufacturer">Manufacturer</label>
+                    <select class="form-control" name="Manufacturer"
+                    formControlName="Manufacturer"
+                    >
+                      <option *ngFor="let man of manufactureres" value="{{man}}">{{man}}</option>
+                    </select>
+              </div>
+               <div class="form-group">
+                    <label for="Description" >Description</label>
+                    <input type="text" class="form-control" name="Description"
+                    formControlName="Description"
+                    >
+              </div>
+               <div class="form-group">
+                    <label for="Price" >Price</label>
+                    <input type="text" class="form-control" name="Price"
+                    formControlName="Price"
+                    >
+                      <!--Evaluate validation conditions-->
+                   <div class="alert alert-danger"
+                   *ngIf="frmProduct.controls.Price.dirty && !frmProduct.controls.Price.valid"
+                 >
+                    <p *ngIf="frmProduct.controls.Price.errors.required">Price is Must</p>
+                    <p *ngIf="frmProduct.controls.Price.errors.minlength">Price must be min 2 characters</p>
+                    <p *ngIf="frmProduct.controls.Price.errors.maxlength">Pricemust be max 5 characters</p>
+                    <p *ngIf="frmProduct.controls.Price.errors.pattern">Price must be numeric</p>
+                    <p *ngIf="frmProduct.controls.Price.errors.odd">Price must be even number</p>
+                 </div>
+              </div>
+               <div class="form-group">
+                   <input type="button" value="Clear" (click)="clear()" class="btn btn-warning"/>
+                   <!--Disbale the submit button if the form is invalid-->
+                    <input type="submit" [disabled]="!frmProduct.valid" value="Save"  class="btn btn-success"/>
+
+              </div>
+            </form>
+          </td>
+          <td>
+              <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                      <th *ngFor="let col of tableHeaders">{{col}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)">
+                     <td *ngFor="let col of tableHeaders">
+                      {{prd[col]}}
+                     </td>
+                   </tr>
+                </tbody>
+              </table>
+          </td>
+        </tr>
+
+    </table>
+
+</div>
