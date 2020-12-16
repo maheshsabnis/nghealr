@@ -44,6 +44,7 @@ export class TableGridComponent implements OnInit {
     onRowClicked(row:any): void {
         // emit the row
         this.rowClicked.emit(row);
+        
     }
 
 }
