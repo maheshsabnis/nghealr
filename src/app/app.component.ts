@@ -33,7 +33,7 @@ export class AppComponent {
       this.name = '';
   }
 
-  display(evt): void {
+  display(evt:any): void {
     // evt.target --> The button object
     // evt.target.value --> Value of the 'value' attribute of the button
     alert(`The Button is Clicked ${evt.target.value}`);

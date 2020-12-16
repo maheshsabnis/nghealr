@@ -1,0 +1,7 @@
+<select class="form-control">
+  <!-- <option value="IT">IT</option>
+  <option value="HR">HR</option>
+  <option value="ADMIN">ADMIN</option>
+  <option value="SALES">SALES</option> -->
+  <option *ngFor="let d of DataSource" value="{{d}}">{{d}}</option>
+</select>

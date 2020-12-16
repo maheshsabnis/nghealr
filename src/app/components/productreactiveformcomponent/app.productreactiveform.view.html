@@ -20,6 +20,7 @@
                       <p *ngIf="frmProduct.controls.ProductId.errors.minlength">Product Id must be min 2 characters</p>
                       <p *ngIf="frmProduct.controls.ProductId.errors.maxlength">Product Id must be max 5 characters</p>
                       <p *ngIf="frmProduct.controls.ProductId.errors.pattern">Product Id must be alphanumeric</p>
+                      <p *ngIf="frmProduct.controls.ProductId.errors.exist">Product Id is already present</p>
                    </div>
               </div>
               <div class="form-group">

@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import {DemoComponent} from './components/democomponent/app.demo.component';
 import {ProductFormComponent} from './components/productformcomponent/app.productform.component';
 import {ProductReactiveFormComponent} from './components/productreactiveformcomponent/app.productreactiveform.component';
+import { DropDownComponent } from './directives/componentdirective/app.dropdown.component';
+import { DropDownUtilizerComponent } from './components/reusablecomponentutilizer/app.dropdownutilizer.component';
+import {TableGridComponent} from './directives/tablegridcomponent/app.tablegrid.component';
+
 // dependencies of NgModule with its properties
 
 // 1. imports: of the type array, that defines the list of Standard Angular moduels
@@ -29,13 +33,14 @@ import {ProductReactiveFormComponent} from './components/productreactiveformcomp
 @NgModule({
   declarations: [
     AppComponent, DemoComponent, ProductFormComponent,
-    ProductReactiveFormComponent
+    ProductReactiveFormComponent,DropDownComponent,
+    DropDownUtilizerComponent, TableGridComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ProductReactiveFormComponent]
+  bootstrap: [DropDownUtilizerComponent]
 })
 export class AppModule { }

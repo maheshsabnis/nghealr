@@ -1,0 +1,30 @@
+<!--Use the DropDownComponent-->
+
+<!-- <app-dropdown-component></app-dropdown-component>  
+
+<hr/>
+
+<app-dropdown-component></app-dropdown-component> -->
+
+<!--The cataegories array is passed to DataSource 
+using property binding-->
+<h3>List of Categories</h3>
+<app-dropdown-component [DataSource]="categories"></app-dropdown-component>
+ 
+<hr/>
+
+<h3>List of Manufacturers</h3>
+<app-dropdown-component [DataSource]="manufacturers"></app-dropdown-component>
+<br/>
+<br/>
+<strong>Data Received from Child Component</strong>
+<strong>{{data}}</strong>
+
+<h3>Generating Products Table Dynamically </h3>
+<!--The parent component will receive data emitted from child component
+  using Event-Binding and with $event object-->
+<app-tablegrid-component [RowSource]="products"
+  (rowClicked)="getRowValue($event)"></app-tablegrid-component>
+<hr/>
+<app-tablegrid-component [RowSource]="emps" 
+    (rowClicked)="getRowValue($event)"></app-tablegrid-component>

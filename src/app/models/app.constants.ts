@@ -16,6 +16,6 @@ export const Students =[
   // }
 ];
 
-export const Categories =["ECT", "ECL", "FOD", "HOM"];
+export const Categories =["ECT", "ECL", "FOD", "HOM", "MED"];
 
 export const Manufacturers =["HP", "TATA", "IBM", "RIL"];

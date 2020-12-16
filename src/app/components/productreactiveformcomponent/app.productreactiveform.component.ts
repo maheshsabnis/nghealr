@@ -47,7 +47,8 @@ export class ProductReactiveFormComponent implements OnInit {
               Validators.required, // this will directly accept an UI element reference
               Validators.minLength(2),
               Validators.maxLength(5),
-              Validators.pattern('^[A-Za-z0-9]+$')
+              Validators.pattern('^[A-Za-z0-9]+$'),
+              CustomValidator.checkExist
            ])),
       ProductName: new FormControl(this.product.ProductName),
       CategoryName: new FormControl(this.product.CategoryName),
