@@ -31,6 +31,7 @@ export class AppComponent {
       this.message = "The Angular Component";
       this.url = "https://www.dotnetcurry.com";
       this.name = '';
+
   }
 
   display(evt:any): void {
