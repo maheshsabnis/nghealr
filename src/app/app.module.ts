@@ -11,6 +11,12 @@ import {ProductReactiveFormComponent} from './components/productreactiveformcomp
 import { DropDownComponent } from './directives/componentdirective/app.dropdown.component';
 import { DropDownUtilizerComponent } from './components/reusablecomponentutilizer/app.dropdownutilizer.component';
 import {TableGridComponent} from './directives/tablegridcomponent/app.tablegrid.component';
+import { StringOperationsServiceComponent } from "./components/stringoperationsservicecomponent/app.setingoperationsservice.component";
+
+// importing service
+import {StringOperationsService} from './services/app.stringoperations.service'; 
+
+
 
 // dependencies of NgModule with its properties
 
@@ -34,13 +40,16 @@ import {TableGridComponent} from './directives/tablegridcomponent/app.tablegrid.
   declarations: [
     AppComponent, DemoComponent, ProductFormComponent,
     ProductReactiveFormComponent,DropDownComponent,
-    DropDownUtilizerComponent, TableGridComponent
+    DropDownUtilizerComponent, TableGridComponent,
+    StringOperationsServiceComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [DropDownUtilizerComponent]
+  // register the service
+ // providers: [StringOperationsService],
+ providers:[],
+  bootstrap: [StringOperationsServiceComponent]
 })
 export class AppModule { }

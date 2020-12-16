@@ -27,7 +27,7 @@ export class DropDownUtilizerComponent implements OnInit {
   }
 
 
-  getRowValue(event): any {
+  getRowValue(event:any): any {
     this.data = JSON.stringify(event);
 
   }
