@@ -2,6 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// importing HttpClientModule for Http Ajax operations
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -12,9 +14,9 @@ import { DropDownComponent } from './directives/componentdirective/app.dropdown.
 import { DropDownUtilizerComponent } from './components/reusablecomponentutilizer/app.dropdownutilizer.component';
 import {TableGridComponent} from './directives/tablegridcomponent/app.tablegrid.component';
 import { StringOperationsServiceComponent } from "./components/stringoperationsservicecomponent/app.setingoperationsservice.component";
-
+import { HttpServiceComponent } from "./components/httpservicecomponent/app.httpservice.component";
 // importing service
-import {StringOperationsService} from './services/app.stringoperations.service'; 
+import {StringOperationsService} from './services/app.stringoperations.service';
 
 
 
@@ -41,15 +43,15 @@ import {StringOperationsService} from './services/app.stringoperations.service';
     AppComponent, DemoComponent, ProductFormComponent,
     ProductReactiveFormComponent,DropDownComponent,
     DropDownUtilizerComponent, TableGridComponent,
-    StringOperationsServiceComponent
+    StringOperationsServiceComponent, HttpServiceComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule, HttpClientModule
   ],
   // register the service
  // providers: [StringOperationsService],
  providers:[],
-  bootstrap: [StringOperationsServiceComponent]
+  bootstrap: [HttpServiceComponent]
 })
 export class AppModule { }

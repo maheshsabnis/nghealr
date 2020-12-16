@@ -1,11 +1,11 @@
 <h6>Dynamic Table</h6>
-<table class="table table-border table-striped">
+<table class="table table-bordered table-striped">
      <thead>
        <th *ngFor="let col of columns">{{col}}</th>
-     </thead>  
+     </thead>
      <tbody>
         <tr *ngFor="let row of RowSource" (click)="onRowClicked(row)">
           <td *ngFor="let col of columns">{{row[col]}}</td>
         </tr>
-     </tbody> 
+     </tbody>
 </table>

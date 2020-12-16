@@ -2,13 +2,13 @@ import { Component, OnInit,Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-tablegrid-component',
-    templateUrl: './app.tablegrid.view.html' 
+    templateUrl: './app.tablegrid.view.html'
 })
 export class TableGridComponent implements OnInit {
     private rowSource:Array<any>;
     columns:Array<string>;
     // define an event emitter property
-    // the rowClicked is an event that will be emitted 
+    // the rowClicked is an event that will be emitted
     // by child and parent has to subscribed to it
     // using EventBinding
     // (rowClicked)="fn1($event)", fn() is public method of parent
@@ -16,9 +16,9 @@ export class TableGridComponent implements OnInit {
     // EventEmitter<T> where T is datatype for data to be emitted
     @Output() rowClicked:EventEmitter<any>;
 
-    constructor() { 
+    constructor() {
         this.rowSource = new Array<any>();
-        // array for storing properties of object of RowSource 
+        // array for storing properties of object of RowSource
         // for generating columns
         this.columns = new Array<string>();
         // instance of EventEmitter
@@ -29,9 +29,14 @@ export class TableGridComponent implements OnInit {
 
     @Input()
     set RowSource(val:Array<any>) {
+       if(val.length >0 ) {
         this.rowSource = val;
         // read properties of 0th record in rowSource
         this.columns = Object.keys(this.rowSource[0]);
+       }
+       else {
+         this.rowSource = new Array<any>();
+       }
     }
 
     get RowSource():Array<any>{
@@ -44,7 +49,7 @@ export class TableGridComponent implements OnInit {
     onRowClicked(row:any): void {
         // emit the row
         this.rowClicked.emit(row);
-        
+
     }
 
 }
