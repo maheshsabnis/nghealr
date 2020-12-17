@@ -6,7 +6,7 @@ import {StringOperationsService} from './../../services/app.stringoperations.ser
 
 @Component({
     selector: 'app-stringoperationsservice-component',
-    templateUrl: './app.stringoperationsservice.view.html' 
+    templateUrl: './app.stringoperationsservice.view.html'
 })
 export class StringOperationsServiceComponent implements OnInit {
 
@@ -18,9 +18,10 @@ export class StringOperationsServiceComponent implements OnInit {
     constructor(private serv:StringOperationsService) {
         this.str = "Angular Development with Service DEMO";
         this.result = '';
+
     }
 
-    ngOnInit(): void { 
+    ngOnInit(): void {
         this.result = this.serv.reverse(this.str);
     }
 }

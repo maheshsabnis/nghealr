@@ -1,0 +1,21 @@
+<input type="button" value="Register" (click)="registerNewUser()">
+<hr>
+<input type="button" value="AuthUser" (click)="authUser()">
+<hr>
+<input type="button" value="Get Data" (click)="getData()">
+
+<hr>
+
+<div>
+  <strong>
+    {{message}}
+  </strong>
+</div>
+<hr>
+
+<div>
+  <strong>
+    {{data|json}}
+  </strong>
+</div>
+

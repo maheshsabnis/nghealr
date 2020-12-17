@@ -15,6 +15,11 @@ import { DropDownUtilizerComponent } from './components/reusablecomponentutilize
 import {TableGridComponent} from './directives/tablegridcomponent/app.tablegrid.component';
 import { StringOperationsServiceComponent } from "./components/stringoperationsservicecomponent/app.setingoperationsservice.component";
 import { HttpServiceComponent } from "./components/httpservicecomponent/app.httpservice.component";
+
+import { MyHttpServiceComponent } from "./components/myhttpservicecomponent/app.myhttpservice.component";
+import {SecureComponent} from './components/securecomponent/app.secure.component';
+
+
 // importing service
 import {StringOperationsService} from './services/app.stringoperations.service';
 
@@ -43,7 +48,8 @@ import {StringOperationsService} from './services/app.stringoperations.service';
     AppComponent, DemoComponent, ProductFormComponent,
     ProductReactiveFormComponent,DropDownComponent,
     DropDownUtilizerComponent, TableGridComponent,
-    StringOperationsServiceComponent, HttpServiceComponent
+    StringOperationsServiceComponent, HttpServiceComponent,
+    MyHttpServiceComponent, SecureComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -52,6 +58,6 @@ import {StringOperationsService} from './services/app.stringoperations.service';
   // register the service
  // providers: [StringOperationsService],
  providers:[],
-  bootstrap: [HttpServiceComponent]
+  bootstrap: [SecureComponent]
 })
 export class AppModule { }
