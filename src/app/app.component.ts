@@ -39,6 +39,7 @@ export class AppComponent {
     // evt.target.value --> Value of the 'value' attribute of the button
     alert(`The Button is Clicked ${evt.target.value}`);
     this.message = "The Button is clicked";
+
   }
 
 }

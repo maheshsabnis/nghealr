@@ -28,6 +28,13 @@ export class HttpService {
     return response;
   }
 
+  getProduct(id:number):Observable<ProductInfo> {
+    let response:Observable<ProductInfo>;
+                                           // REMOTE-URL addresss
+    response = this.http.get<ProductInfo>(`${this.url}/${id}`);
+    return response;
+  }
+
   postProduct(prd: ProductInfo):Observable<ProductInfo> {
     let response:Observable<ProductInfo>;
     // define headers

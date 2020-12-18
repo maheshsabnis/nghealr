@@ -1,7 +1,7 @@
 import { RegisterUser, ProductResponse, LoginUser } from './../../models/app.secutiry.models';
 import { SecureService } from './../../services/app.secure.service';
 import { Component, OnInit } from '@angular/core';
-import { runInThisContext } from 'vm';
+
 
 @Component({
   selector: 'app-seure-component',
@@ -19,7 +19,7 @@ export class SecureComponent implements OnInit {
 
   registerNewUser():void {
     let user = new RegisterUser();
-    user.Email ="user2@msit.com";
+    user.Email ="user5@msit.com";
     user.Password = "P@ssw0rd_";
     user.ConfirmPassword = "P@ssw0rd_";
 
@@ -32,7 +32,7 @@ export class SecureComponent implements OnInit {
 
   authUser():void {
     let user = new LoginUser();
-    user.Email ="user2@msit.com";
+    user.Email ="user5@msit.com";
     user.Password = "P@ssw0rd_";
 
 

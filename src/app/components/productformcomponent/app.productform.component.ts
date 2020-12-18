@@ -15,11 +15,13 @@ export class ProductFormComponent implements OnInit {
   products: Array<Product>;
   private logic: Logic;
   tableHeaders: Array<string>;
+  selectColor: string;
   constructor(){
     this.product = new Product('','','','','',0);
     this.logic = new Logic();
     this.products =  new Array<Product>();
     this.tableHeaders = new Array<string>();
+    this.selectColor = '';
   }
    ngOnInit(): void {
      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -43,6 +45,11 @@ export class ProductFormComponent implements OnInit {
    getSelectedProduct(prd:Product):void {
 
      this.product  =  Object.assign({},prd);
+   }
+
+
+   chooseColor(event:any):void {
+     this.selectColor = event.target.value;
    }
 
 }

@@ -1,0 +1,42 @@
+<div class="container">
+<form name="frmProduct">
+  <h4>Edit Product</h4>
+  <div class="form-group">
+    <label for="ProductRowId">Product Row Id</label>
+    <input type="text" class="form-control" name="ProductRowId"  [(ngModel)]="product.ProductRowId">
+</div>
+  <div class="form-group">
+        <label for="ProductId">Product Id</label>
+        <input type="text" class="form-control" name="ProductId"  [(ngModel)]="product.ProductId">
+  </div>
+  <div class="form-group">
+        <label for="ProductName">Product Name</label>
+        <input type="text" class="form-control" name="ProductName" [(ngModel)]="product.ProductName">
+  </div>
+    <div class="form-group">
+        <label for="CategoryName">Category Name</label>
+        <select class="form-control" name="CategoryName" [(ngModel)]="product.CategoryName">
+            <option *ngFor="let cat of categories" value="{{cat}}">{{cat}}</option>
+        </select>
+  </div>
+    <div class="form-group">
+        <label for="Manufacturer">Manufacturer</label>
+        <select class="form-control" name="Manufacturer" [(ngModel)]="product.Manufacturer">
+          <option *ngFor="let man of manufacturers" value="{{man}}">{{man}}</option>
+        </select>
+  </div>
+   <div class="form-group">
+        <label for="Description" >Description</label>
+        <input type="text" class="form-control" name="Description" [(ngModel)]="product.Description">
+  </div>
+   <div class="form-group">
+        <label for="BasePrice" >Price</label>
+        <input type="text" class="form-control" name="BasePrice" [(ngModel)]="product.BasePrice">
+  </div>
+   <div class="form-group">
+       <input type="button" value="Clear" (click)="clear()" class="btn btn-warning"/>
+        <input type="button" value="Save" (click)="save()" class="btn btn-success"/>
+
+  </div>
+</form>
+</div>

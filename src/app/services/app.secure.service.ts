@@ -11,7 +11,7 @@ export class SecureService {
   private url:string;
 
   constructor(private http:HttpClient){
-    this.url = 'http://localhost:5000';
+    this.url = 'https://tokenbasedsecureapi.azurewebsites.net';
   }
 // register new user
   registerUser(user: RegisterUser):Observable<string> {

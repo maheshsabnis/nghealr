@@ -1,3 +1,5 @@
+import { EditProductComponent } from './components/routingapp/editproductcomponent/app.editproduct.component';
+import { SinglePageComponent } from './components/routingapp/app.singlepage.component';
 // BrowserModule: Loads the Module and its dependencies(?) in browser for exceution
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,7 +24,15 @@ import {SecureComponent} from './components/securecomponent/app.secure.component
 
 // importing service
 import {StringOperationsService} from './services/app.stringoperations.service';
+import { PipeComponent } from './components/pipecomponent/app.pipe.component';
 
+// importing custom pipes
+import { RaisedToValuePipe,ReversePipe } from "./pipes/app.custom.pipe";
+
+// importing custom directive
+import { ColorDirective } from "./directives/colorattributedirective/app.color.directive";
+import { CreateProductComponent } from './components/routingapp/createproductcomponent/app.createproduct.component';
+import { ListProductComponent } from './components/routingapp/listproductcomponent/app.listproduct.component';
 
 
 // dependencies of NgModule with its properties
@@ -49,8 +59,15 @@ import {StringOperationsService} from './services/app.stringoperations.service';
     ProductReactiveFormComponent,DropDownComponent,
     DropDownUtilizerComponent, TableGridComponent,
     StringOperationsServiceComponent, HttpServiceComponent,
-    MyHttpServiceComponent, SecureComponent
+    MyHttpServiceComponent, SecureComponent, PipeComponent,
+    RaisedToValuePipe, ReversePipe, ColorDirective,
+    ListProductComponent, CreateProductComponent, SinglePageComponent,
+    EditProductComponent
   ],
+  // AppRoutingModule: is imported here this means that
+  // the routetable created by this module
+  // will be loaded as AppModule application root level
+  // when the AppModule is loaded in browser, it will load route table
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule, HttpClientModule
@@ -58,6 +75,6 @@ import {StringOperationsService} from './services/app.stringoperations.service';
   // register the service
  // providers: [StringOperationsService],
  providers:[],
-  bootstrap: [SecureComponent]
+  bootstrap: [SinglePageComponent]
 })
 export class AppModule { }

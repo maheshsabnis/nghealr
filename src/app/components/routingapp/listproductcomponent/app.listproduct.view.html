@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table table-bordered table-striped table-danger">
+  <thead>
+     <tr>
+
+       <th *ngFor="let header of tableColumnHeaders" >
+         {{header}}
+       </th>
+       <th></th>
+     </tr>
+  </thead>
+  <tbody>
+
+      <tr *ngFor="let prd of products">
+
+          <td *ngFor="let header of tableColumnHeaders">
+             {{prd[header]}}
+          </td>
+          <td>
+            <input type="button" class="btn btn-link" value="Edit" (click)="navigateToEdit(prd.ProductRowId)">
+          </td>
+      </tr>
+  </tbody>
+</table>
+</div>

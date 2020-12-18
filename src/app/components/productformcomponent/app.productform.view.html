@@ -40,6 +40,23 @@
             </form>
           </td>
           <td>
+              <div class="container">
+                <table class="table table-bordered table-striped">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="radio" name="r" value="red" (click)="chooseColor($event)"> Red
+                      </td>
+                      <td>
+                        <input type="radio" name="r" value="yellow" (click)="chooseColor($event)"> Yellow
+                      </td>
+                      <td>
+                        <input type="radio" name="r" value="blue" (click)="chooseColor($event)"> Blue
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -47,7 +64,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                   <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)">
+                   <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)" [setColor]="selectColor">
                      <td *ngFor="let col of tableHeaders">
                       {{prd[col]}}
                      </td>
